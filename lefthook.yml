@@ -1,0 +1,5 @@
+pre-commit:
+  commands:
+    rubocop:
+      tags: backend style
+      run: bin/rubocop

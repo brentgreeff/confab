@@ -23,5 +23,20 @@ module Confab
 
     config.time_zone = "London"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators do |g|
+      g.orm :active_record, primary_key_type: :uuid
+
+      g.factory_bot suffix: "factory"
+
+      g.test_framework :rspec,
+        fixtures: false,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        mailer_specs: false,
+        request_specs: false,
+        controller_specs: false
+    end
   end
 end
