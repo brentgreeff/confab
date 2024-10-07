@@ -58,7 +58,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres
+        image: postgres:16-alpine
         env:
           POSTGRES_DB: rails_test
           POSTGRES_USER: rails
@@ -66,6 +66,10 @@ jobs:
         ports:
           - 5432:5432
         options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
 
     steps:
       - name: Install packages
@@ -81,13 +85,9 @@ jobs:
           bundler-cache: true
 
       - name: Set up database schema
-        RAILS_ENV: test
         run: bin/rails db:schema:load
 
       - name: Run tests
-        env:
-          RAILS_ENV: test
-          DATABASE_URL: postgres://rails:password@localhost:5432/rails_test
         run: bin/rspec
 
       - name: Keep screenshots from failed system tests
