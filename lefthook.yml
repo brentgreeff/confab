@@ -3,3 +3,6 @@ pre-commit:
     rubocop:
       tags: backend style
       run: bin/rubocop
+    brakeman:
+      tags: security
+      run: bin/brakeman --no-pager -q
