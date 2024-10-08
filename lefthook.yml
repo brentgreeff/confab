@@ -5,4 +5,4 @@ pre-commit:
       run: bin/rubocop
     brakeman:
       tags: security
-      run: bin/brakeman --no-pager -q
+      run: bin/brakeman -q --no-pager --no-summary

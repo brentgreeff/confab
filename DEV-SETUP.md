@@ -37,7 +37,9 @@ Install RVM
 
 ### Setup Lefthook (commit hooks)
 
-`lefthook install` - runs rubocop before commiting changes.
+`git config --unset core.hooksPath`
+
+`lefthook install` - runs rubocop & brakeman before commiting changes.
 
 ### Start webserver etc
 
