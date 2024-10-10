@@ -1,0 +1,8 @@
+fieldset
+  = f.label :text, "Comment *"
+  br
+  = f.text_area :text, size: "40x2", autofocus: true
+
+#inline_errors
+
+= f.submit "Add", class: "btn-primary"

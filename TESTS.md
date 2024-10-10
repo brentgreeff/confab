@@ -1,0 +1,22 @@
+# TESTS
+
+## Run Tests
+
+`bin/rspec`
+
+## Run Tests Automatically (Guard)
+
+My prefered way to work:
+
+`bin/guard -P rspec` - will run in the background and automatically run tests when they are saved. Check `Guardfile` to setup rules for running tests automatically.
+
+## Code Coverage (Simplecov)
+
+Running all tests will create a report in the `confab/coverage/` dir.
+
+Last check: `94.69%` with only `2 files` lacking coverage:
+
+`app/jobs/application_job.rb`
+`app/mailers/application_mailer.rb`
+
+Since they are not used in the app at present.

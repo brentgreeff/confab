@@ -1,0 +1,11 @@
+fieldset
+  = f.label :name, "Name *"
+  br
+  = f.text_field :name, size: "40x2", autofocus: true
+
+  br
+  = f.label :status, "Status *"
+  br
+  = f.text_field :status, size: "40x2"
+
+= f.submit "Update", class: "btn-primary"

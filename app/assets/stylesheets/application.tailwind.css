@@ -2,12 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+@layer base {
+  h1 {
+    @apply mb-1 bg-gray-600 p-2 text-white rounded-md;
+  }
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  form {
+    @apply bg-gray-200 p-2;
+  }
+
+  fieldset {
+    @apply py-2;
+  }
+
+  input[type=text] {
+    @apply mb-3;
+  }
+
+  hr {
+    @apply mb-2 mt-2;
+  }
+
+  table {
+    @apply m-4;
+
+    td {
+      @apply px-2;
+    }
   }
 }
 
-*/
+div.field_with_errors > label {
+  @apply text-red-900;
+}
+
+div.field_with_errors > :is(input, textarea, select) {
+  @apply border-red-300 text-red-900 placeholder-red-300;
+}
+
+.field_with_errors { display: inline; }
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-gray-600 border border-gray-100 text-white rounded-md;
+
+    &:hover {
+      @apply py-2 px-4 bg-gray-300 border border-gray-600 text-black cursor-pointer;
+    }
+  }
+
+  .notification.new {
+    @apply bg-green-300;
+  }
+
+  #nav {
+    @apply text-right pr-2;
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  #banners {
+    .flash {
+      @apply rounded-md p-2 mb-2;
+    }
+
+    .flash-error {
+      @apply bg-yellow-400;
+    }
+
+    .flash-success {
+      @apply bg-green-300;
+    }
+  }
+
+  #inline_errors,
+  #banners {
+    .error {
+      @apply bg-red-200 rounded-md p-2 mb-2;
+    }
+  }
+}

@@ -13,7 +13,7 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "slim"
 
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# https://guides.rubyonrails.org/active_model_basics.html#securepassword
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -30,8 +30,9 @@ group :development, :test do
   gem "brakeman", require: false
 
   gem "rubocop-rails-omakase", require: false
-  gem "rubocop-performance", require: false
   gem "rubocop-rspec", require: false
+  gem "rubocop-capybara", require: false
+  gem "rubocop-factory_bot", require: false
 
   gem "rspec-rails"
   gem "guard-rspec", require: false
@@ -48,8 +49,9 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  # https://guides.rubyonrails.org/testing.html#system-testing
   gem "capybara"
   gem "selenium-webdriver"
+  gem "timecop"
   gem "simplecov", require: false
 end

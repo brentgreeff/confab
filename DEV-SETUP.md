@@ -2,12 +2,6 @@
 
 Instructions are for MacOS.
 
-### Run in order:
-
-`docker compose up` - to start Postgres DB - requires Docker.
-
-Open another shell tab:
-
 #### OpenSSL
 
 `brew install openssl@3`
@@ -23,11 +17,23 @@ Install RVM
 
 `rvm install 3.3.5 --with-openssl-dir="$(brew --prefix openssl@3)"`
 
-- if RVM doesn't tell you to install the correct ruby version, make sure that the following line is in your .bashrc or .bash_profile:
+If RVM doesn't tell you to install the correct ruby version:
+
+`type rvm`
+Does it produce `-bash: type: rvm: not found`
+
+Make sure that the following line is in your .bashrc or .bash_profile:
 
 ```shell
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 ```
+
+### Start webserver etc
+
+`bin/dev` - to start development services.
+
+Please check for: `Listening on http://127.0.0.1:3100`
+to see the PORT the web server is running on.
 
 ### Create & migrate DB
 
@@ -40,10 +46,3 @@ Install RVM
 `git config --unset core.hooksPath`
 
 `lefthook install` - runs rubocop & brakeman before commiting changes.
-
-### Start webserver etc
-
-`bin/dev` - to start development services.
-
-Please check for: `Listening on http://127.0.0.1:3100`
-to see the PORT the web server is running on.

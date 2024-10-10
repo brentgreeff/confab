@@ -1,0 +1,10 @@
+h1 Edit current project
+
+#nav
+  = link_to "Cancel", root_path
+
+#banners
+  = render "error_banner_with_lines", errors: @project.errors.full_messages
+
+= form_with model: (@project ||= Project.new) do |f|
+  = render "projects/fields", f: f

@@ -1,0 +1,27 @@
+<% if @comment.errors.any? %>
+  <%= turbo_stream.update "banners" do %>
+    <%= render "error_banner" %>
+  <% end %>
+
+  <%= turbo_stream.replace "comment_form" do %>
+    <%= render "form", comment: @comment %>
+  <% end %>
+
+  <%= turbo_stream.update "inline_errors" do %>
+    <%= render "inline_errors", errors: @comment.errors.full_messages %>
+  <% end %>
+
+<% else %>
+  <%= turbo_stream.update "banners" do %>
+    <%= render "success_banner" %>
+  <% end %>
+
+  <%= turbo_stream.prepend "messages" do %>
+    <%= render "notifications/notification",
+      notification: @comment.notification, classes: "notification new" %>
+  <% end %>
+
+  <%= turbo_stream.replace "comment_form" do %>
+    <%= render "form", comment: Comment.new %>
+  <% end %>
+<% end %>

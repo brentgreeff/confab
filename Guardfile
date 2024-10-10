@@ -19,7 +19,7 @@ guard :rspec, cmd: "./bin/rspec --format documentation" do
 
   watch(rails.controllers) do |m|
     [
-      rspec.spec.call("requests/#{m[1]}_request")
+      rspec.spec.call("requests/#{m[1]}_request"),
     ]
   end
 

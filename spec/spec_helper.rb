@@ -18,20 +18,20 @@ RSpec.configure do |config|
   if config.files_to_run.one?
     config.default_formatter = "doc"
   else
-    require 'simplecov'
+    require "simplecov"
 
     SimpleCov.start do
-      track_files '{app,lib}/**/*.rb'
+      track_files "{app,lib}/**/*.rb"
       enable_coverage :branch
-      add_group 'Controllers', 'app/controllers'
-      add_group 'Jobs', 'app/jobs'
-      add_group 'Mailers', 'app/mailers'
-      add_group 'Helpers', 'app/helpers'
-      add_group 'Models', 'app/models'
-      add_group 'Channels', 'app/channels'
-      add_group 'App', 'app'
-      add_group 'Config', 'config'
-      add_filter '/spec/'
+      add_group "Controllers", "app/controllers"
+      add_group "Jobs", "app/jobs"
+      add_group "Mailers", "app/mailers"
+      add_group "Helpers", "app/helpers"
+      add_group "Models", "app/models"
+      add_group "Channels", "app/channels"
+      add_group "App", "app"
+      add_group "Config", "config"
+      add_filter "/spec/"
     end
   end
 

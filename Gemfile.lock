@@ -302,6 +302,10 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.32.3)
       parser (>= 3.3.1.0)
+    rubocop-capybara (2.21.0)
+      rubocop (~> 1.41)
+    rubocop-factory_bot (2.26.1)
+      rubocop (~> 1.61)
     rubocop-minitest (0.36.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -373,6 +377,7 @@ GEM
     thruster (0.1.8-x86_64-darwin)
     thruster (0.1.8-x86_64-linux)
     tilt (2.4.0)
+    timecop (0.9.10)
     timeout (0.4.1)
     turbo-rails (2.0.10)
       actionpack (>= 6.0.0)
@@ -417,7 +422,8 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.0.beta1)
   rspec-rails
-  rubocop-performance
+  rubocop-capybara
+  rubocop-factory_bot
   rubocop-rails-omakase
   rubocop-rspec
   selenium-webdriver
@@ -428,6 +434,7 @@ DEPENDENCIES
   stimulus-rails
   tailwindcss-rails
   thruster
+  timecop
   turbo-rails
   tzinfo-data
 

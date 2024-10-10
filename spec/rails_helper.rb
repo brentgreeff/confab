@@ -1,11 +1,11 @@
-require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
-require_relative '../config/environment'
+require "spec_helper"
+ENV["RAILS_ENV"] ||= "test"
+require_relative "../config/environment"
 
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort("The Rails env is running in production mode!") if Rails.env.production?
 return unless Rails.env.test?
 
-require 'rspec/rails'
+require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 
 Dir[
@@ -19,7 +19,9 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config|
-  config.fixture_paths = [ Rails.root.join('spec/fixtures') ]
+  config.fixture_paths = [ Rails.root.join("spec/fixtures") ]
+
+  config.include TimecopHelpers
 
   config.use_transactional_fixtures = true
 
