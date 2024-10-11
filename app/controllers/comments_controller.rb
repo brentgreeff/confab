@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(safe_params)
+    @comment = Current.user.comments.build(safe_params)
 
     if @comment.save
-      flash.now[:success] = "New comment added!"
+      flash.now[:notice] = "New comment added!"
     else
-      flash.now[:error] = "Error adding comment"
+      flash.now[:alert] = "Error adding comment"
     end
   end
 

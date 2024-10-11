@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Authentication
   # Only browsers: webp img, web push, badges, import maps, CSS nesting, & :has.
   allow_browser versions: :modern
 

@@ -8,11 +8,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(safe_params)
-      flash[:success] = "Project updated!"
+    if @project.update(safe_params.merge(updated_by: Current.user))
+      flash[:notice] = "Project updated!"
       redirect_to root_url
     else
-      flash.now[:error] = "Error updating project!"
+      flash.now[:alert] = "Error updating project!"
       render :edit, status: :unprocessable_entity
     end
   end

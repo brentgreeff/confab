@@ -59,10 +59,10 @@ div.field_with_errors > :is(input, textarea, select) {
     @apply text-right pr-2;
 
     a {
-      text-decoration: underline;
+      @apply underline ml-5;
 
       &:hover {
-        text-decoration: none;
+        @apply no-underline;
       }
     }
   }

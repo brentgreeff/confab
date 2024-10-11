@@ -12,7 +12,7 @@ My prefered way to work:
 
 ## Code Coverage (Simplecov)
 
-Running all tests will create a report in the `confab/coverage/` dir.
+Running all tests will create a report - `open confab/coverage/index.html`
 
 Last check: `94.69%` with only `2 files` lacking coverage:
 

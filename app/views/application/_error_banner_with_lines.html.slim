@@ -1,5 +1,5 @@
-- if flash[:error]
-  div class="flash flash-error"= flash[:error]
+- if flash[:alert]
+  div class="flash flash-error"= flash[:alert]
 
   - if errors.any?
     - errors.each do |error|

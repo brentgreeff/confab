@@ -5,6 +5,7 @@ h1
 
 #nav
   = link_to "Edit project", edit_project_path
+  = render 'user_nav'
 
 #banners
   = render "success_banner"
@@ -16,7 +17,8 @@ hr
   table
     thead
       tr
-        th message
-        th created time
+        th activity
+        th author
+        th time
       tbody#messages
         = render @notifications, classes: "notification"

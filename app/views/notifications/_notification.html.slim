@@ -1,3 +1,4 @@
 tr[id=dom_id(notification) class="#{classes}"]
   td.message= notification.message
+  td.author= notification.authored_by.email_address
   td.created_at= notification.created_at.to_fs(:dt)

@@ -21,6 +21,7 @@ end
 RSpec.configure do |config|
   config.fixture_paths = [ Rails.root.join("spec/fixtures") ]
 
+  config.include SysHelpers, type: :system
   config.include TimecopHelpers
 
   config.use_transactional_fixtures = true
