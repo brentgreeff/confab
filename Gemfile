@@ -55,3 +55,5 @@ group :test do
   gem "timecop"
   gem "simplecov", require: false
 end
+
+gem "solid_cable", "~> 3.0"

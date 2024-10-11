@@ -4,15 +4,15 @@ guard :rspec, cmd: "./bin/rspec --format documentation" do
 
   clearing :on
 
-  # RSpec files
-  rspec = dsl.rspec
-  # watch(rspec.spec_helper) { rspec.spec_dir }
-  # watch(rspec.spec_support) { rspec.spec_dir }
-  watch(rspec.spec_files)
+  watch('app/models/concerns/notifiable.rb') do
+    [
+      'spec/models/comment_spec.rb',
+      'spec/models/change_spec.rb',
+    ]
+  end
 
-  # Ruby files
-  # ruby = dsl.ruby
-  # dsl.watch_spec_files_for(ruby.lib_files)
+  rspec = dsl.rspec
+  watch(rspec.spec_files)
 
   rails = dsl.rails
   dsl.watch_spec_files_for(rails.app_files)
@@ -23,7 +23,6 @@ guard :rspec, cmd: "./bin/rspec --format documentation" do
     ]
   end
 
-  # Rails config changes
   # watch(rails.spec_helper) { rspec.spec_dir }
   watch(rails.app_controller) { "#{rspec.spec_dir}/controllers" }
 end
