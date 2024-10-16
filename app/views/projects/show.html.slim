@@ -12,7 +12,7 @@ h1
 
 = render "comments/form"
 
-= turbo_stream_from 'notification_stream'
+= turbo_stream_from "notification_stream"
 
 hr
 
@@ -23,4 +23,4 @@ hr
         th author
         th time
       tbody#messages
-        = render @notifications, classes: "notification"
+        = render partial: "notifications/notification", collection: @notifications, locals: {classes: "notification"}, cached: true

@@ -7,8 +7,7 @@ RSpec.describe Project, type: :model do
   context "Changing the status and name" do
     before do
       on("2022/02/02 02:02") do
-        project.updated_by = author
-        project.update(name: "new", status: "closed")
+        project.update(name: "new", status: "closed", updated_by: author)
       end
     end
 
