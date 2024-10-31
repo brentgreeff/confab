@@ -28,6 +28,10 @@ Make sure that the following line is in your .bashrc or .bash_profile:
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 ```
 
+### bundle
+
+`bin/bundle`
+
 ### Start webserver etc
 
 `bin/dev` - to start development services.
