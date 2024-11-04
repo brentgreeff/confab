@@ -13,10 +13,20 @@ class User < ApplicationRecord
     source: "notification"
 
   def notifications
-    comment_notifications + change_notifications
+    Notification.
+      joins(<<-SQL).
+        FULL OUTER JOIN "comments" ON
+          "notifications"."notifiable_id" = "comments"."id"
+        FULL OUTER JOIN "changes" ON
+          "notifications"."notifiable_id" = "changes"."id"
+      SQL
+      where(
+        comments: { author_id: self.id }).or(self.class.where(
+        changes: { author_id: self.id }),
+      )
   end
 
-  after_commit -> { notifications.each(&:touch) }, on: :update
+  after_commit -> { notifications.touch_all }, on: :update
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 end
