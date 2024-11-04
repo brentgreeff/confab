@@ -34,7 +34,7 @@ RSpec.describe Project, type: :model do
       before do
         on("2023/03/03 03:03") do
           project.updated_by = author
-          project.update(name: "Another", status: "Finished")
+          project.update!(name: "Another", status: "Finished")
         end
       end
 

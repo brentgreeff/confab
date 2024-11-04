@@ -113,6 +113,9 @@ Metrics/CyclomaticComplexity:
                  of test cases needed to validate a method.
   Enabled: false
 
+Rails/SaveBang:
+  Enabled: true
+
 Rails/Delegate:
   Description: 'Prefer delegate method for delegations.'
   Enabled: false
