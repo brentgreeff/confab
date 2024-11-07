@@ -6,3 +6,6 @@ pre-commit:
     brakeman:
       tags: security
       run: bin/brakeman -q --no-pager --no-summary
+    audit:
+      tags: security
+      run: bin/bundler-audit check --update
