@@ -1,2 +1,2 @@
 - if flash[:notice]
-  div class="flash flash-success"= flash[:notice]
+  div[class="flash flash-success" data-turbo-temporary=true]= flash[:notice]

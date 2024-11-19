@@ -1,2 +1,2 @@
 - if flash[:alert]
-  div class="flash flash-error"= flash[:alert]
+  div[ class="flash flash-error" data-turbo-temporary=true]= flash[:alert]

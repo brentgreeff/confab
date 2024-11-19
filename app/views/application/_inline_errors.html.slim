@@ -1,3 +1,4 @@
-- errors.each do |error|
-  .error
-    = error
+div data-turbo-temporary=true
+  - errors.each do |error|
+    .error
+      = error
