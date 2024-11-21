@@ -237,8 +237,8 @@ GEM
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.8)
-    rack-livereload (0.5.1)
-      rack
+    rack-livereload (0.6.1)
+      rack (>= 3.0, < 3.2)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
