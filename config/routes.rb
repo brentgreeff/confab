@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :comments, only: [ :create ]
   resource :project, only: [ :edit, :update ]
 
+  resources :stats, only: [ :index ]
+
   # Render dynamic PWA files from app/views/pwa/*
   # (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest

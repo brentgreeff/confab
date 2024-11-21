@@ -5,6 +5,7 @@ h1
 
 #nav
   = link_to "Edit project", edit_project_path
+  = link_to "Stats", stats_path
   = render 'user_nav'
 
 #banners
@@ -16,11 +17,11 @@ h1
 
 hr
 
-  table
-    thead
-      tr
-        th activity
-        th author
-        th time
-      tbody#messages
-        = render partial: "notifications/notification", collection: @notifications, locals: {classes: "notification"}, cached: true
+table
+  thead
+    tr
+      th activity
+      th author
+      th time
+    tbody#messages
+      = render partial: "notifications/notification", collection: @notifications, locals: {classes: "notification"}, cached: true

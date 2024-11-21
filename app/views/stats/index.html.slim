@@ -1,0 +1,16 @@
+h1 Stats
+
+#nav
+  = link_to "Home", root_path
+  = link_to "Edit project", edit_project_path
+  = render 'user_nav'
+
+hr
+
+table
+  thead
+    tr
+      th user
+      th changes
+    tbody#messages
+      = render partial: "users/stats", collection: @users, as: 'user'
