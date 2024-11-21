@@ -1,3 +1,10 @@
+guard :livereload do
+  watch(%r{app/assets/builds/application.css$})
+  watch(%r{app/views/.+\.(erb|haml|slim)$})
+  watch(%r{app/helpers/.+\.(rb)$})
+  watch(%r{app/javascript/controllers/.+\.js$})
+end
+
 guard :rspec, cmd: "./bin/rspec --format documentation" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)

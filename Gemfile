@@ -47,6 +47,9 @@ end
 group :development do
   # gem "web-console"
   gem "lefthook"
+  gem "guard-livereload", require: false
+  gem "rack-livereload"
+  gem "rb-fsevent", require: false
 end
 
 group :test do
