@@ -15,9 +15,9 @@ Install RVM
 - then `cd` into the project -
 - it will ask you to install the correct version of ruby using RVM.
 
-`rvm install 3.3.6 --with-openssl-dir=$(brew --prefix openssl@3)`
+`rvm install 3.3.7 --with-openssl-dir=$(brew --prefix openssl@3)`
 
-`rvm --default use 3.3.6`
+`rvm --default use 3.3.7`
 
 If RVM doesn't tell you to install the correct ruby version:
 
