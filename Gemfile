@@ -9,6 +9,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "tailwindcss-rails", "~> 4.3"
+gem "slim"
 
 gem "jbuilder"
 
@@ -29,13 +30,28 @@ group :development, :test do
   gem "bundler-audit", require: false
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
+
+  gem "rubocop-rspec", require: false
+  gem "rubocop-capybara", require: false
+  gem "rubocop-factory_bot", require: false
+
+  gem "rspec-rails"
+  gem "guard-rspec", require: false
+  gem "factory_bot_rails"
+
+  gem "pry-rails"
+  gem "pry-doc"
+  gem "ostruct" # should be required by pry.
 end
 
 group :development do
-  gem "web-console"
+  # gem "web-console"
+  gem "guard-livereload", require: false
 end
 
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem "timecop"
+  gem "simplecov", require: false
 end
