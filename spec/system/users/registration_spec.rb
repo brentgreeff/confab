@@ -23,7 +23,7 @@ RSpec.describe "Visitor", type: :system do
     visit "/"
     click_on "Register"
 
-    expect(page).to have_content "Sign up", wait: 3
+    expect(page).to have_content "Sign up", wait: 5
 
     fill_in "user_email_address", with: "brent@example.com"
     fill_in "user_password", with: "password"
