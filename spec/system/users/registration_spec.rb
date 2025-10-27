@@ -22,9 +22,8 @@ RSpec.describe "Visitor", type: :system do
   scenario "Passwords don't match", js: true do
     visit "/"
     click_on "Register"
-    sleep 1
 
-    expect(find("h1")).to have_content "Sign up"
+    expect(page).to have_content "Sign up", wait: 3
 
     fill_in "user_email_address", with: "brent@example.com"
     fill_in "user_password", with: "password"
